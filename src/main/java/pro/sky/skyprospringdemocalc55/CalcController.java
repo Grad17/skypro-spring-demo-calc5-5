@@ -24,7 +24,6 @@ public class CalcController {
             return number1 + "+" + number2 + "=" + calcService.sumCalc(number2, number1);
         }
     }
-
     @GetMapping(path = "/minus")
     public String minusCalc(@RequestParam("num1") Double number1, @RequestParam("num2") Double number2) {
         if (number1 == null || number2 == null) {
@@ -33,7 +32,6 @@ public class CalcController {
             return number1 + "-" + number2 + "=" + calcService.minusCalc(number1, number2);
         }
     }
-
     @GetMapping(path = "/multiply")
     public String multiplyCalc(@RequestParam("num1") Double number1, @RequestParam("num2") Double number2) {
         if (number1 == null || number2 == null) {
@@ -42,7 +40,6 @@ public class CalcController {
             return number1 + "*" + number2 + "=" + calcService.multiplyCalc(number1, number2);
         }
     }
-
     @GetMapping(path = "/divide")
     public String divideCalc(@RequestParam("num1") Double number1, @RequestParam("num2") Double number2) {
         if (number1 == null || number2 == null) {
