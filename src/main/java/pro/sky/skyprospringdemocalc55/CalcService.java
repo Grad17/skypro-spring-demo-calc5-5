@@ -3,35 +3,20 @@ package pro.sky.skyprospringdemocalc55;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CalcService {
-
-    public String hello() {
-        return "hello";
+public class CalcService implements CalculatorInterface {
+    public String welcomeCalc() {
+        return "Добро пожаловать в калькулятор. Выберете операцию и введите числа: /plus, /minus, /multiply, /divide";
     }
-
-    public String answerHello(String userName) {
-        return "<b>hello</b>" + " " + userName;
+    public double sumCalc(Double number1, Double number2) {
+        return number1 + number2;
     }
-
-    public int calc(int num1, char operation, int num2) {
-        int result;
-        switch (operation) {
-            case '+':
-                result = num1 + num2;
-                break;
-            case '-':
-                result = num1 - num2;
-                break;
-            case '*':
-                result = num1 * num2;
-                break;
-            case '/':
-                result = num1 / num2;
-                break;
-            default:
-                System.out.println("Операция не распознана. Повторите ввод.");
-                result = calc(num1, operation, num2);//рекурсия
-        }
-        return result;
+    public double minusCalc(Double number1, Double number2) {
+        return number1 - number2;
+    }
+    public double multiplyCalc(Double number1, Double number2) {
+        return number1 * number2;
+    }
+    public double divideCalc(Double number1, Double number2) {
+        return number1 / number2;
     }
 }
